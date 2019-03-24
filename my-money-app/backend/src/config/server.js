@@ -16,3 +16,5 @@ server.listen(port, function () {
     console.log(`BACKEND is running on port ${port}.`)
 })
 
+// garante que server seja utilizado em routes
+module.exports = server 
