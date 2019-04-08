@@ -5,10 +5,15 @@ const express = require('express')
 const server = express()
 const allowCors = require('../config/cors')
 
+// Faz com que os mecanismos de paginação funcionem (skip e limit) na API
+// Testar no PostMan
+const queryParser = require('express-query-int')
+
 // Para toda requisição, use o bodyParser para interpretar quando o 
 // formato for urlencoded
 server.use(bodyParser.urlencoded({ extended: true }))
 server.use(allowCors)
+server.use(queryParser())
 
 // Faz o parser de uma requisição json
 server.use(bodyParser.json())
