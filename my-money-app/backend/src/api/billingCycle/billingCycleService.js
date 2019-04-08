@@ -1,8 +1,10 @@
 // Cria o serviço restful indicando os métodos HTTP
 // a serem trabalhados
-
+const errorHandler = require('../common/errorHandler')
 const BillingCycle = require('./billingCycle')
+
 BillingCycle.methods(['get', 'post', 'put', 'delete'])
+BillingCycle.after('post',errorHandler).after('put',errorHandler)
 
 // valida o retorno dos registros atualizados
 BillingCycle.updateOptions({ new: true, runValidators: true })
