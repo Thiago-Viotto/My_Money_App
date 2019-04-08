@@ -1,11 +1,11 @@
 const _ = require('lodash')
 
 // Middleware que pega os erros
-module.exports = (req,resp,next) => {
-    const bundle = resp.locals.bundle //lista de erros
+module.exports = (req,res,next) => {
+    const bundle = res.locals.bundle //lista de erros
     if(bundle.errors){
         const errors = parseErrors(bundle.errors)
-        resp.status(500).json({errors})
+        res.status(500).json({errors})
     } else {
         next() //vai para o próximo middleware
     }
