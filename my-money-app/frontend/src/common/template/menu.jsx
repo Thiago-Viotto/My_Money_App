@@ -11,5 +11,5 @@ export default props => (
             </MenuItem>
         </MenuTree>
     </ul>
-  
 )
+
