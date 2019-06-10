@@ -16,8 +16,21 @@ export function getList() {
 }
 
 export function create(values) {
+    return submit(values, 'post')
+}
+
+export function update(values) {
+    return submit(values, 'put')
+}
+
+export function remove(values) {
+    return submit(values, 'delete')
+}
+
+function submit(values, method) {
     return dispatch => {
-        axios.post(`${BASE_URL}/billingCycles`, values)
+        const id = values._id ? values._id : ''
+        axios[method](`${BASE_URL}/billingCycles/${id}`, values)
             .then(resp => {
                 toastr.success('Sucesso', 'Operação realizada com sucesso')
                 dispatch(init())
@@ -27,10 +40,9 @@ export function create(values) {
                     toastr.error('Error', error))
             })
     }
-
 }
 
-export function showUpdate(billingCycle){
+export function showUpdate(billingCycle) {
     return [
         showTabs('tabUpdate'),
         selectTab('tabUpdate'),
@@ -38,10 +50,18 @@ export function showUpdate(billingCycle){
     ]
 }
 
-// Como deve estar o estado inicial do ciclo de pagamentos
-export function init(){
+export function showDelete(billingCycle) {
     return [
-        showTabs('tabList','tabCreate'),
+        showTabs('tabDelete'),
+        selectTab('tabDelete'),
+        initialize('billingCycleForm', billingCycle)  //inicializa o form 
+    ]
+}
+
+// Como deve estar o estado inicial do ciclo de pagamentos
+export function init() {
+    return [
+        showTabs('tabList', 'tabCreate'),
         selectTab('tabList'),
         getList(),
         initialize('billingCycleForm', INITIAL_VALUES)
