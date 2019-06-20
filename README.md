@@ -2,7 +2,7 @@
 
 App for control and management of credits and debts.
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![](https://github.com/Thiago-Viotto/My_Money_App/blob/frontend/App.gif)
 
 # Technologies, tools and languages used:
 
