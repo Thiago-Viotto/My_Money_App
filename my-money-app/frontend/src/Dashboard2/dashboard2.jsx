@@ -20,6 +20,12 @@ export default class Dashboard2 extends Component {
             .then(resp => this.setState(resp.data))
     }
 
+    calculateConsolityValue(credit, debt) {
+        let total = credit-debt
+        let result = parseFloat(total.toFixed(2))
+        return result
+    }
+
     render() {
         const {credit, debt} = this.state
         return (
@@ -27,11 +33,11 @@ export default class Dashboard2 extends Component {
                 <ContentHeader title='Dashboard' small='Versão 1.0' />
                 <Content>
                     <Row>
-                        <ValueBox cols='12 4' color='green' icon='bank' value={`R$ ${credit}`}
+                        <ValueBox cols='12 4' color='green' icon='bank' value={`R$ ${parseFloat(credit.toFixed(2))}`}
                             text='Total de Créditos' />
-                        <ValueBox cols='12 4' color='red' icon='credit-card' value={`R$ ${debt}`}
+                        <ValueBox cols='12 4' color='red' icon='credit-card' value={`R$ ${parseFloat(debt.toFixed(2))}`}
                             text='Total de Débitos' />
-                        <ValueBox cols='12 4' color='blue' icon='money' value={`R$ ${credit - debt}`}
+                        <ValueBox cols='12 4' color='blue' icon='money' value={`R$ ${this.calculateConsolityValue(credit,debt)}`}
                             text='Valor consolidado' />
                     </Row>
                 </Content>
