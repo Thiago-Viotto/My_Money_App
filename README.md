@@ -10,12 +10,13 @@ App for control and management of credits and debts.
 - React
 - MongoDB 
 - Axios 
+- Express
 
 # My informations
 
-Name: Thiago Henrique Viotto 
-Graduating System Analyst in Unicamp, with expected end date 2019. 
-Email: thiagohenriqueviotto1@gmail.com 
-Phone: (19)98135-6064 
-Linkedin: https://www.linkedin.com/in/thiago-henrique-viotto-4485b5147/
+Name: Thiago Henrique Viotto <br/>
+Undergraduate Systems Analyst at Unicamp, expected to finish in 2019. <br/>
+Mail: thiagohenriqueviotto1@gmail.com <br/>
+Phone: (19)98135-6064 <br/>
+Linkedin: https://www.linkedin.com/in/thiago-henrique-viotto-4485b5147/ <br/>
 
